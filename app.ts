@@ -5,11 +5,8 @@ import ColorsController from './controllers/colors'
 
 const app = express()
 
-const CLIENT_URL = process.env.CLIENT_URL
-const JEST_URL = process.env.JEST_URL
-
 // localhost:3000 para el front end y localhost para el Jest del front end
-const whitelist = [JEST_URL, CLIENT_URL]
+const whitelist = ['http://localhost', 'http://localhost:3000']
 const corsOptions = {
   origin: (origin: any, callback: any) => {
     if (whitelist.includes(origin) || origin === undefined) {
